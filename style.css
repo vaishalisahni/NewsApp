@@ -1,0 +1,299 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    outline: none;
+    background-color: transparent;
+    border: none;
+  }
+  
+  body {
+    background-color: #f4f4f4; /* Light background */
+  }
+  
+  header {
+    background-color: rgba(55, 55, 75, 0.95); 
+    color: white;
+    padding: 12px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  header .branding {
+    height: 50px; 
+    width: auto; 
+    max-width: 100%; 
+}
+  
+  header .form-container {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  header .searchBar {
+    padding: 8px;
+    border-radius: 28px;
+    background-color: rgba(255, 255, 245, 0.9);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  }
+  
+  
+  header .searchBar input {
+    border: none;
+    border-radius: 20px;
+    padding: 8px 12px;
+    width: 180px;
+    font-size: 14px;
+    transition: border 0.3s;
+  }
+  
+  header .searchBar button {
+    /* background-color: #007BFF; */
+    border-radius: 50%;
+    padding: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+  }
+  
+  header .searchBar button img {
+    width: 16px;
+    height: 16px;
+  }
+ 
+  #search-filter {
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 8px;
+    background-color: rgba(75, 75, 90, 0.9);
+    color: white;
+    cursor: pointer;
+    transition: border-color 0.3s;
+  }
+  
+  header ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 8px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  nav ul li a:hover {
+    background-color: rgba(95, 90, 120, 0.85); /* Slightly lighter, subdued color */
+}
+
+  
+  .filters li select {
+    color: white;
+    max-width: 80px;
+    background-color: rgba(75, 75, 90, 0.8); 
+    border-radius: 4px;
+    padding: 4px;
+  }
+  
+  main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 24px;
+    gap: 20px;
+  }
+  
+  .card {
+    background-color: rgba(255, 255, 245, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    transition: transform 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card .source {
+    color: #4f4f4f;
+    font-size: 12px;
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    background-color: rgba(230, 224, 238, 0.8); 
+    padding: 2px 6px;
+    border-radius: 100px;
+  }
+  
+  .card .image {
+    width: 100%;
+    border-radius: 4px;
+    max-height: 200px;
+    object-fit: cover;
+  }
+  
+  .card .title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .card .author,
+  .card .published {
+    color: #666;
+    font-size: 12px;
+  }
+  
+  .card .description {
+    color: #111;
+    font-size: 14px;
+  }
+
+  /* Media Queries */
+
+ /* Tablet devices (≤ 1024px) */
+@media (max-width: 1024px) {
+    header .branding {
+        font-size: 20px;
+    }
+
+    header .form-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header .searchBar input {
+        width: 150px; /* Reduce input width */
+    }
+
+    header ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    main {
+        padding: 16px;
+        gap: 15px;
+    }
+
+    .card {
+        width: 280px; /* Reduce card width */
+    }
+}
+
+/* Mobile devices (≤ 768px) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    header .branding {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    header .form-container {
+        flex-direction: column;
+    }
+
+    header .searchBar input {
+        width: 100%; /* Full width */
+    }
+
+    header .searchBar {
+        width: 100%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    main {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .card {
+        width: 100%; /* Full width on mobile */
+    }
+
+    .filters {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .filters li select {
+        max-width: 100%; /* Full width for selects */
+        margin-bottom: 5px;
+    }
+}
+
+/* Very small mobile devices (≤ 480px) */
+@media (max-width: 480px) {
+    header {
+        padding: 5px;
+    }
+
+    header .branding {
+        font-size: 16px;
+    }
+
+    header .searchBar {
+        padding: 6px;
+    }
+
+    header .searchBar input {
+        padding: 6px; /* Reduce padding */
+        font-size: 12px; /* Smaller font size */
+    }
+
+    nav ul li a {
+        padding: 6px 8px; /* Smaller padding */
+        font-size: 12px; /* Smaller font size */
+    }
+
+    main {
+        padding: 5px;
+        gap: 5px; /* Reduce gap */
+    }
+
+    .card {
+        padding: 12px; /* Smaller padding */
+        width: 100%; /* Full width on very small devices */
+    }
+
+    .filters li select {
+        font-size: 12px; /* Smaller font size */
+    }
+}
