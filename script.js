@@ -143,7 +143,7 @@ function loadNews(data) {
   newsContainer.innerHTML="";
   console.log("Loading News...", data);
   
-    showNews(data.articles);
+    // showNews(data.articles);
   
 }
 
