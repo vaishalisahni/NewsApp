@@ -21,7 +21,7 @@ const loadNews = (data) => {
 // DEFAULT NEWS WHEN NOT SEARCHED ANYTHING
 async function loadDefaultNews() {
   let language = langFilter.value || "en";
-  let country = countryFilter.value || "us"; // Get the selected country
+  let country = countryFilter.value || "in"; // Get the selected country
   // let sort_by = selectSortBy.value || "popularity";
   
   try {
@@ -35,8 +35,8 @@ async function loadDefaultNews() {
 
 // CATEGORY NEWS SELECTED AT NAV BAR
 async function loadCategoryNews(category) {
-  const language = langFilter.value;
-  const country = countryFilter.value;
+  const language = langFilter.value || "en";
+  const country = countryFilter.value || "in";
   // const sort_by = selectSortBy.value;
   
   try {
@@ -88,8 +88,8 @@ function showNews(data) {
 document.querySelector(".searchBar").addEventListener('submit', async (event) => {
   event.preventDefault();
   const searchData = inputbox.value.trim().toLowerCase();
-  const language = langFilter.value;
-  const country = countryFilter.value;
+  const language = langFilter.value || "en";
+  const country = countryFilter.value || "in";
   // const sort_by = selectSortBy.value;
   const searchIn = searchFilter.value;
 
