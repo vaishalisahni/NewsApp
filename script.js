@@ -21,7 +21,7 @@ const loadNews = (data) => {
 // DEFAULT NEWS WHEN NOT SEARCHED ANYTHING
 async function loadDefaultNews() {
   let language = langFilter.value || "en";
-  let country = countryFilter.value || "in"; // Get the selected country
+  let country = countryFilter.value || "us"; // Get the selected country
   // let sort_by = selectSortBy.value || "popularity";
   
   try {
@@ -59,8 +59,8 @@ function showNews(data) {
     const source = document.createElement("span");
     const image = document.createElement("img");
     const title = document.createElement("h2");
-    const author = document.createElement("span");
-    const published = document.createElement("p");
+    const published = document.createElement("span");
+    const description = document.createElement("p");
 
     source.classList.add("source");
     source.innerText = news.source.name;
@@ -72,14 +72,14 @@ function showNews(data) {
     title.classList.add("title");
     title.innerText = news.title;
 
-    author.className = "author published";
+    published.className = "published";
     const publishedDate = new Date(news.publishedAt);
-    author.innerText = `${news.author || "Unknown"} • ${publishedDate.toLocaleString()}`;
+    published.innerText =`${publishedDate.toLocaleString()}`;
 
-    published.classList.add("description");
-    published.innerText = news.description || "No description available.";
+    description.classList.add("description");
+    description.innerText = news.description || "No description available.";
 
-    newCard.append(source, image, title, author, published);
+    newCard.append(source, image, title, published,description);
     newsContainer.append(newCard);
   });
 }
