@@ -91,7 +91,7 @@ document.querySelector(".searchBar").addEventListener('submit', async (event) =>
   const language = langFilter.value || "en";
   const country = countryFilter.value || "in";
   // const sort_by = selectSortBy.value;
-  const searchIn = searchFilter.value;
+ // const searchIn = searchFilter.value;
 
   try {
     const response = await fetch(`https://gnews.io/api/v4/search?q=${searchData}&lang=${language}&country=${country}&apikey=${API_KEY}`);
